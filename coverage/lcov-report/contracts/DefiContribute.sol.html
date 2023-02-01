@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/DefiContribute.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> DefiContribute.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>33/33</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.08% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>51/52</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>17/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>68/68</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//SPDX-License-Identifier: MIT
+pragma solidity ^0.8.13;
+&nbsp;
+import "@openzeppelin/contracts/access/Ownable.sol";
+&nbsp;
+error DefiContribute__NoAdminFound();
+error DefiContribute__NotEligibleToDoneeRequest();
+error DefiContribute__NotDonee();
+error DefiContribute__NotInPendingStatus();
+error DefiContribute__NotAcceptedAsDonee();
+error DefiContribute__NotTheDonee();
+error DefiContribute__NotElegibleDueYourRole();
+error DefiContribute__NotEligibleToRemoval();
+error DefiContribute__NotEligibleToWithdraw();
+&nbsp;
+contract DefiContribute is Ownable {
+    enum doneeRequestStatus {
+        Rejected,
+        Pending,
+        Accepted,
+        Canceled
+    }
+&nbsp;
+    struct Donee {
+    string name;
+    uint256 id;
+    uint256 proceeds;
+    address payable wallet;
+    string message;    
+}
+&nbsp;
+    mapping (address =&gt; bool) public admin;
+    mapping (address =&gt; bool) public toNewDonee;
+    mapping (address =&gt; doneeRequestStatus) public doneeToStatus;
+    mapping (address =&gt; uint8) public addressToRequestsSent;
+    mapping (address =&gt; uint256) public doneeCandidateToFreezeTime;
+    mapping (uint256 =&gt; Donee) public idToDonee;
+    mapping (address =&gt; uint256) addressToDoneeId;
+    mapping (uint256 =&gt; uint256) public doneeToWithdrawalFreeze;
+    mapping (uint256 =&gt; uint8) public idToRedFlags;
+&nbsp;
+    uint256 public doneesId = 0;
+    uint256 public randomDonationPool;
+&nbsp;
+    event NewAdmin(address indexed admin);
+    event AdminRevoke(address indexed admin);
+    event NewDoneeRequest(address indexed donee, string message);
+    event DoneeRequestCanceled(address indexed donee);
+    event ApprovedDonee(address indexed donee);
+    event RejectedDonee(address indexed donee);
+    event NewDonee(string indexed cause, address indexed donee, uint256 indexed doneeId, string message);
+    event EliminatedDonee(string indexed cause, uint256 indexed id, address indexed wallet);
+    event Dontation(address indexed to, address indexed from, uint indexed amount);
+    event RedFlag(string indexed name, uint256 indexed id, address wallet, address indexed admin);
+    event ReadyToRemove(string indexed name, uint256 indexed id, address indexed wallet);
+    event SummedToThePool(uint256 indexed amount);
+    event Withdrawal(Donee indexed donee, uint256 indexed proceeds);
+&nbsp;
+    modifier onlyAdmin() {
+        if (admin[msg.sender] == true) {
+            _;
+        } else {
+            revert DefiContribute__NoAdminFound();
+        }
+    }
+&nbsp;
+    modifier onlyAcceptedDonee() {
+        if (doneeToStatus[msg.sender] == doneeRequestStatus(2)) {
+            _;
+        } else {
+            revert DefiContribute__NotAcceptedAsDonee();
+        }
+    }
+&nbsp;
+    modifier onlyDonee() {
+        if (idToDonee[addressToDoneeId[msg.sender]].wallet == msg.sender ) {
+            _;
+        } else {
+            revert DefiContribute__NotDonee();
+        }
+    }
+&nbsp;
+    modifier notRulers() {
+        if ((owner() == msg.sender) || admin[msg.sender] == true) {
+            revert DefiContribute__NotElegibleDueYourRole();
+        }
+        _;
+    }
+&nbsp;
+    modifier doneeRemovalRequirements(uint256 _id, address _wallet) {
+        if (_id &lt;= doneesId &amp;&amp; _wallet == idToDonee[_id].wallet &amp;&amp; idToRedFlags[_id] &gt;= 3) {
+            _;
+        } else {
+            revert DefiContribute__NotEligibleToRemoval();
+        }
+    }
+&nbsp;
+    constructor() Ownable() {
+&nbsp;
+    }
+&nbsp;
+&nbsp;
+    function addAdmin(address _newAdmin) public onlyOwner() {
+        admin[_newAdmin] = true;
+        emit NewAdmin(_newAdmin);
+    }
+&nbsp;
+    function revokeAdmin (address _admin) public onlyOwner() {
+        if (admin[_admin] == true) {
+            admin[_admin] = false;
+            emit AdminRevoke(_admin);
+        } else {
+            revert DefiContribute__NoAdminFound();
+        }
+    }
+&nbsp;
+    /**
+     * @notice Sends a petition to be confirmed as donee, first needs to be accepted and then finished by each donee in case.
+     * It is verified that the address has not send more than 3 attempts and that if it was freezed, the time has already passed...
+     */
+    function doneePetition(string memory _message) public notRulers() returns (bool success) {
+        if (addressToRequestsSent[msg.sender] &lt; 3 &amp;&amp; doneeCandidateToFreezeTime[msg.sender] &lt;= block.timestamp) {
+            addressToRequestsSent[msg.sender]++;
+            doneeToStatus[msg.sender] = doneeRequestStatus(1);
+            emit NewDoneeRequest(msg.sender, _message);
+            return true;
+        } else {
+            revert DefiContribute__NotEligibleToDoneeRequest();
+        }
+    }
+&nbsp;
+    /**
+     * @notice Cancell the donee petition but does not decrease the &lt;addressToRequestSent&gt; for the address, also freeze the address to be able to apply again to donee for a while.
+     */
+    function cancelDoneePetition() public {
+        if (doneeToStatus[msg.sender] == doneeRequestStatus.Pending) {
+            doneeCandidateToFreezeTime[msg.sender] = block.timestamp + 4 weeks;
+            doneeToStatus[msg.sender] = doneeRequestStatus(3);
+            emit DoneeRequestCanceled(msg.sender);
+        } else {
+            revert DefiContribute__NotInPendingStatus();
+        }
+    }
+&nbsp;
+    /**
+     * @notice Approves donee to be able to finish the process to make it's profile 
+     */
+    function approveDonee(address payable _donee) public onlyAdmin() {
+        if (doneeToStatus[_donee] == doneeRequestStatus(1)) {
+            doneeToStatus[_donee] = doneeRequestStatus(2);
+            emit ApprovedDonee(_donee);
+        } else {
+            revert DefiContribute__NotTheDonee();
+        }
+    }
+&nbsp;
+    function rejectDonee(address payable _donee) public onlyAdmin() {
+        if (doneeToStatus[_donee] == doneeRequestStatus(1)) {
+            doneeCandidateToFreezeTime[_donee] = block.timestamp + 12 weeks;
+            doneeToStatus[_donee] = doneeRequestStatus(0);
+            emit RejectedDonee(_donee);
+        } else {
+            revert DefiContribute__NotInPendingStatus();
+        }
+    }
+&nbsp;
+    function becomeDonee(string memory _name, string memory _message) public onlyAcceptedDonee() {
+        idToDonee[doneesId] = Donee(_name, doneesId, 0, payable(msg.sender), _message);
+        doneeToWithdrawalFreeze[doneesId] = block.timestamp + 4 weeks;
+        emit NewDonee(_name, msg.sender, doneesId, _message);
+        doneesId++;
+    }
+&nbsp;
+    /**
+     * @notice Admins can add a red flag to a donee for the sake of setting them to removal by admins for bad behaviour and giving
+     * them time to withdraw funds
+     */
+    function addRedFlag(uint256 _doneeId, address _wallet) public onlyAdmin() {
+        if (_doneeId &lt;= doneesId &amp;&amp; idToDonee[_doneeId]. wallet == _wallet) {
+            idToRedFlags[_doneeId]++;
+            emit RedFlag(idToDonee[_doneeId].name,_doneeId, _wallet, msg.sender);
+        } else {
+            revert DefiContribute__NotDonee();
+        }
+    }
+&nbsp;
+    /**
+     * @notice Admins can only remove a donee after 3 red flags
+     */
+    function removeDonee(uint256 _doneeId, address payable _wallet) public onlyAdmin() doneeRemovalRequirements(_doneeId, _wallet) {
+        string memory name = idToDonee[_doneeId].name;
+        address wallet = idToDonee[_doneeId].wallet;
+        uint256 proceeds = idToDonee[_doneeId].proceeds;
+        delete idToDonee[_doneeId];
+        if (proceeds &gt; 0) {
+            randomDonationPool += proceeds;
+            emit SummedToThePool(proceeds);
+        }
+        emit EliminatedDonee(name, _doneeId, wallet);
+    }
+&nbsp;
+    function donate(uint256 _doneeId, address payable _wallet) public payable {
+        if ((idToDonee[_doneeId].wallet != 0x0000000000000000000000000000000000000000) &amp;&amp; (idToDonee[_doneeId].wallet == _wallet)) {
+            idToDonee[_doneeId].proceeds += msg.value;
+            emit Dontation(_wallet, msg.sender, msg.value);
+        } else {
+            revert DefiContribute__NotTheDonee();
+        }
+    }
+&nbsp;
+    function withdraw() public onlyDonee() {
+        if (doneeToWithdrawalFreeze[addressToDoneeId[msg.sender]] &lt;= block.timestamp) {
+            uint256 proceeds = idToDonee[addressToDoneeId[msg.sender]].proceeds;
+            idToDonee[addressToDoneeId[msg.sender]].proceeds = 0;
+            (bool success, ) = msg.sender.call{value: proceeds}("");
+            <span class="missing-if-branch" title="else path not taken" >E</span>require (success, "Could not withdraw proceeds...");
+            emit Withdrawal(idToDonee[addressToDoneeId[msg.sender]], proceeds);
+        } else {
+            revert DefiContribute__NotEligibleToWithdraw();
+        }
+    }
+&nbsp;
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Dec 04 2022 23:13:47 GMT+0100 (Central European Standard Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
